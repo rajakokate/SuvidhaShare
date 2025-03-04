@@ -21,15 +21,25 @@ SuvidhaShare is an open-source platform by Suvidha Foundation to reduce food was
 4. **Track environmental & social impact** through reports.  
 
 ## 🛠 Tech Stack  
-- **Frontend:** React.js / Next.js  
-- **Backend:** Django / Node.js  
-- **Database:** PostgreSQL / MongoDB  
+- **Frontend:** React.js
+- **Backend:** Node.js  
+- **Database:** MongoDB  
 - **Mobile App (Future):** Flutter / React Native  
 - **Hosting:** AWS / DigitalOcean  
+
+## Environment & Dependencies
+This project was built using the following versions:
+- **Node.js:** v20.17.0
+- **npm:** v10.8.2
+- **React:** v19.0.0
+- **Vite:** v6.2.0
+- **Tailwind CSS:** v4.0.9
+
 
 ## 🤝 How to Contribute  
 1. **Fork this repo** & create a new branch.  
 2. **Check open issues** & pick a task.  
+3. **Create a separate branch** for your feature and push all the code there.
 3. **Submit a PR (Pull Request)** and follow our guidelines.  
 4. **Join our community on Discord/Slack (Coming Soon!)**  
 
