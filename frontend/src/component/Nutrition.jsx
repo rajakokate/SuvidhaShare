@@ -1,6 +1,5 @@
 import React from 'react';
 import Background from '../assets/food.png';
-import dish from '../assets/dish.png';
 import group from '../assets/group.png';
 
 const Nutrition = () => {
