@@ -1,13 +1,13 @@
 import React from "react";
 import Nutrition from "./component/Nutrition";
-import SuvidhaShare from "./component/SuvidhaShare";
+import WhyUseSuvidhaShare from "./component/WhyUseSuvidhaShare";
 
 function App() {
 
   return (
     <>
     < Nutrition />
-    < SuvidhaShare />
+    < WhyUseSuvidhaShare />
     </>
   )
 }
