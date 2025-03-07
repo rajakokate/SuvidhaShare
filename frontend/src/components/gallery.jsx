@@ -2,12 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Import images from assets folder
-import img1 from "./assets/download.jpeg";
-import img2 from "./assets/download1.jpeg";
-import img3 from "./assets/download2.jpeg";
-import img4 from "./assets/download3.jpeg";
-import img5 from "./assets/download.jpeg";
-import img6 from "./assets/download.jpeg";
+import img1 from "../assets/download.jpeg";
+import img2 from "../assets/download1.jpeg";
+import img3 from "../assets/download2.jpeg";
+import img4 from "../assets/download3.jpeg";
+import img5 from "../assets/download.jpeg";
+import img6 from "../assets/download.jpeg";
 
 // Gallery Items Data
 const galleryItems = [
@@ -36,7 +36,6 @@ const Gallery = () => {
         </p>
       </div>
 
-      {/* Gallery Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
         {galleryItems.map((item, index) => (
           <motion.div
