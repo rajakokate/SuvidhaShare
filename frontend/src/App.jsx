@@ -1,13 +1,16 @@
+import React from "react";
+import Navbar from "./components/navbar";
+import HeroSection from "./components/HeroSection";
+import Solutions from "./components/Solutions";
 
-function App() {
-
+const App = () => {
   return (
-    <>
-    <div className='container mx-auto align-middle text-center'>
-      <h1 className='text-xl font-bold'>Home page</h1>
+    <div>
+      <Navbar />
+      <HeroSection />
+      <Solutions />
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
