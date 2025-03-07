@@ -4,8 +4,8 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center p-2 bg-white shadow-md">
       <div className="flex items-center gap-2">
-        <img src="/logo1.png" alt="Suvidha Share" className="h-12 w-auto" />
-        <span className="text-gray-700 font-semibold text-lg">Suvidha Share</span>
+        <img src="src/assets/logo.png" alt="Suvidha Share" className="w-40 max-h-12 object-contain" />
+        <span className="text-gray-700 font-semibold text-lg"></span>
       </div>
       <div className="flex gap-4">
         <button className="bg-green-700 text-white px-6 py-2 rounded-full font-bold flex items-center gap-1">
