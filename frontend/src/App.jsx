@@ -1,21 +1,11 @@
-import Gallery from "./components/gallery"
-import ClientTestimonials from "./components/clientTestmonials"
-import Dashboard from "./components/Dashboard"
 
 function App() {
 
   return (
-    <>  
-    <div>
-      <Dashboard/>
+    <>
+    <div className='container mx-auto align-middle text-center'>
+      <h1 className='text-xl font-bold'>Home page</h1>
     </div>
-    <div>
-      <Gallery/>
-    </div>
-    <div>
-      <ClientTestimonials />
-    </div>
-
     </>
   )
 }
