@@ -12,7 +12,6 @@ const App = () => {
   return (
     <div>
       <Navbar />
-      <SignIn />
       <HeroSection />
       <Solutions />
       <Nutrition />
