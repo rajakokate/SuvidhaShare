@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import Navbar from "./components/navbar";
 import HeroSection from "./components/HeroSection";
 import Solutions from "./components/Solutions";
+import SignUp from "./components/SignUp";
 import Nutrition from "./components/nutrition";
 import WhyUseSuvidhaShare from "./components/whyUseSuvidhaShare";
 import Gallery from "./components/gallery";
