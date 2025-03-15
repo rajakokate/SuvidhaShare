@@ -1,4 +1,8 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Importing necessary components from react-router-dom
+
+// Import your components
+import Dashboard from "./components/Dashboard";
 import Navbar from "./components/navbar";
 import HeroSection from "./components/HeroSection";
 import Solutions from "./components/Solutions";
@@ -10,19 +14,27 @@ import SignIn from "./components/signin";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <HeroSection />
-      <Solutions />
-      <Nutrition />
-      <WhyUseSuvidhaShare />
-      <div>
-        <Gallery />
-      </div>
-      <div>
-        <ClientTestimonials />
-      </div>
-    </div>
+    <Router> {/* Wrapping the app with Router to enable routing */}
+      {/* Navbar will be available on all pages */}
+
+      <Routes> {/* Only one Route will be rendered at a time */}
+        {/* Route for Dashboard */}
+        <Route path="/dashboard" element={<Dashboard />} />
+
+        {/* Default Route (Home page) */}
+        <Route path="/" element={
+          <>
+           <Navbar />
+            <HeroSection />
+            <Solutions />
+            <Nutrition />
+            <WhyUseSuvidhaShare />
+            <Gallery />
+            <ClientTestimonials />
+          </>
+        } />
+      </Routes>
+    </Router>
   );
 };
 
