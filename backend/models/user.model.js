@@ -6,7 +6,7 @@ const userSchema = new Schema(
     {
         username: {
             type: String,
-            required: true,
+            required: [true, "Username is required"],
             unique: true,
             maxlength: 50,
             lowercase: true,
@@ -15,7 +15,7 @@ const userSchema = new Schema(
         },
         email: {
             type: String,
-            required: true,
+            required: [true, "Email is required"],
             unique: true,
             maxlength: 50,
             lowercase: true,
@@ -23,7 +23,7 @@ const userSchema = new Schema(
         },
         fullname: {
             type: String,
-            required: true,
+            required: [true, "Name is required"],
             maxlength: 50,
             trim: true,
             index: true,
@@ -38,12 +38,13 @@ const userSchema = new Schema(
         },
         role: {
             type: String,
-            enum: ["volunteer", "individual", "restaurant", "admin"],
+            enum: ["volunteer", "individual", "organisation", "admin"],
             default: "individual"
         },
-        profileImage: {
-            type: Image,
-            default: null,
+        avatar: {
+            data: Buffer,
+            contentType: String,
+            default: null
         }
     },
     { timestamps: true }
