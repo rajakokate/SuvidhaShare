@@ -14,6 +14,7 @@ import ClientTestimonials from "./components/clientTestmonials";
 import ContactUs from "./components/contactUs";
 
 import SignIn from "./components/signin";
+import SignUp from "./components/SignUp";
 
 const App = () => {
   return (
@@ -21,11 +22,11 @@ const App = () => {
       {" "}
       {/* Wrapping the app with Router to enable routing */}
       {/* Navbar will be available on all pages */}
-      <Routes>
-        {" "}
-        {/* Only one Route will be rendered at a time */}
-        {/* Route for Dashboard */}
+      <Routes> {/* Only one Route will be rendered at a time */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<SignIn />} />
+
         {/* Default Route (Home page) */}
         <Route
           path="/"
@@ -47,4 +48,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default App
