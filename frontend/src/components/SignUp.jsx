@@ -60,6 +60,7 @@ const SignUp = () => {
           </ul>
         </nav>
       </header>
+
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md mt-20 flex flex-col justify-center items-center">
         <h2 className="text-3xl font-bold text-center mb-4">Welcome To</h2>
         <div className="text-4xl font-bold text-green-700 flex justify-center items-center">
