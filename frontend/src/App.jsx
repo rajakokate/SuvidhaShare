@@ -12,7 +12,7 @@ import WhyUseSuvidhaShare from "./components/whyUseSuvidhaShare";
 import Gallery from "./components/gallery";
 import ClientTestimonials from "./components/clientTestmonials";
 import ContactUs from "./components/contactUs";
-
+import AboutUs from "./pages/AboutUs";
 import SignIn from "./components/signin";
 import SignUp from "./components/SignUp";
 
@@ -26,7 +26,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
-
+        <Route path="/aboutus" element={<AboutUs />}/>
         {/* Default Route (Home page) */}
         <Route
           path="/"
@@ -48,4 +48,4 @@ const App = () => {
   );
 };
 
-export default App
+export default App;
