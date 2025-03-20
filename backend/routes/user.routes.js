@@ -1,6 +1,6 @@
 import { Router } from "express";
 import {
-    registerUser,
+    signupUser,
     updateAvatarImage,
     loginUser,
     logoutUser,
@@ -16,9 +16,9 @@ import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router();
 
-router.route("/signup").post(registerUser);
+router.route("/signup").post(signupUser);
 router.route("/login").post(loginUser);
-router.route("/user/:username").get(getUser);
+// router.route("/:username").get(getUser);
 
 // secured routes
 router.route("/logout").post(verifyJWT, logoutUser);

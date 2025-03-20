@@ -6,16 +6,16 @@ import jwt from "jsonwebtoken";
 import sharp from "sharp";
 
 // Register a new user
-const registerUser = asyncHandler(async (req, res) => {
+const signupUser = asyncHandler(async (req, res) => {
     const { username, email, password, fullname, role } = req.body;
 
     // check if any of the fields are empty
     if (
-        username?.trim === "" ||
-        email?.trim === "" ||
-        password?.trim === "" ||
-        fullname?.trim === "" ||
-        role?.trim === ""
+        !username || username?.trim === "" ||
+        !email || email?.trim === "" ||
+        !password || password?.trim === "" ||
+        !fullname || fullname?.trim === "" ||
+        !role || role?.trim === ""
     ) {
         throw new ApiError(400, "All fields are required");
     }
@@ -33,7 +33,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     // check if password is valid
     if (password.length < 8) {
-        throw new ApiError(400, "Password must be at least 6 characters long");
+        throw new ApiError(400, "Password must be at least 8 characters long");
     }
 
     // create new user
@@ -42,7 +42,7 @@ const registerUser = asyncHandler(async (req, res) => {
         password,
         fullname,
         username: username.toLowerCase(),
-        role : role.toLowerCase()
+        role : role?.toLowerCase()
     });
 
     // check if user is created and remove password and refreshToken from response
@@ -90,11 +90,15 @@ const updateAvatarImage = asyncHandler(async (req, res) => {
         },
     },
         { new: true }
-    );
+    ).select("-password -refreshToken");
+
+    if (!user) {
+        throw new ApiError(500, "Something went wrong while uploading image. Please try again later.");
+    }
 
     return res
         .status(200)
-        .json(new ApiResponse(200, user, "Avatar image uploaded successfully"));
+        .json(new ApiResponse(200, user, "Avatar image updated successfully"));
 })
 
 // generate access token and refresh token
@@ -115,6 +119,12 @@ const generateAccessAndRefreshToken = async (userId) => {
         );
     }
 };
+
+// cookie options
+const options = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production",
+}
 
 // Login a user
 const loginUser = asyncHandler(async (req, res) => {
@@ -148,11 +158,8 @@ const loginUser = asyncHandler(async (req, res) => {
         "-password -refreshToken"
     );
 
-    const options = {
-        httpOnly: true,
-        secure: true,
-    };
-
+    console.log(accessToken)
+    console.log(refreshToken)
     return res
         .status(200)
         .cookie("accessToken", accessToken, options)
@@ -179,11 +186,6 @@ const logoutUser = asyncHandler(async (req, res) => {
         },
         { new: true }
     );
-
-    const options = {
-        httpOnly: true,
-        secure: true,
-    };
 
     return res
         .status(200)
@@ -219,8 +221,6 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
                 "Refresh Token expired. Please login again"
             );
         }
-
-        const options = { httpOnly: true, secure: true };
 
         const { accessToken, newRefreshToken } =
             await generateAccessAndRefreshToken(user._id);
@@ -333,8 +333,6 @@ const deleteUserAccount = asyncHandler(async (req, res) => {
         );
     }
 
-    const options = { httpOnly: true, secure: true };
-
     return res
         .status(200)
         .clearCookie("accessToken", options)
@@ -343,7 +341,7 @@ const deleteUserAccount = asyncHandler(async (req, res) => {
 });
 
 export {
-    registerUser,
+    signupUser,
     updateAvatarImage,
     loginUser,
     logoutUser,
