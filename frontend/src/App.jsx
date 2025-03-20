@@ -27,7 +27,6 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<SignIn />} />
         <Route path="/aboutus" element={<AboutUs />}/>
-        <Route path="/signin" element={<SignIn />}/>
         {/* Default Route (Home page) */}
         <Route
           path="/"
