@@ -7,7 +7,8 @@ import sharp from "sharp";
 
 // Register a new user
 const signupUser = asyncHandler(async (req, res) => {
-    const { username, email, password, fullname, role } = req.body;
+    const { username, email, password, fullName, role } = req.body;
+    const fullname = fullName;
 
     // check if any of the fields are empty
     if (
@@ -47,7 +48,7 @@ const signupUser = asyncHandler(async (req, res) => {
 
     // check if user is created and remove password and refreshToken from response
     const createdUser = await User.findById(user._id).select(
-        "-password -refreshToken"
+        "-password -refreshToken -avatar.data"
     );
 
     if (!createdUser) {
@@ -84,13 +85,13 @@ const updateAvatarImage = asyncHandler(async (req, res) => {
     const user = await User.findByIdAndUpdate(
     req.user?._id,
     {
-        profileImage: {
-        data: resizedImageBuffer,
-        contentType: "image/jpeg",
+        avatar: {
+            data: resizedImageBuffer,
+            contentType: "image/jpeg",
         },
     },
         { new: true }
-    ).select("-password -refreshToken");
+    ).select("-password -refreshToken -avatar.data");
 
     if (!user) {
         throw new ApiError(500, "Something went wrong while uploading image. Please try again later.");
@@ -122,9 +123,9 @@ const generateAccessAndRefreshToken = async (userId) => {
 
 // cookie options
 const options = {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-}
+  httpOnly: true,
+  secure: true
+};
 
 // Login a user
 const loginUser = asyncHandler(async (req, res) => {
@@ -155,11 +156,9 @@ const loginUser = asyncHandler(async (req, res) => {
     );
 
     const loggedInUser = await User.findById(user._id).select(
-        "-password -refreshToken"
+        "-password -refreshToken -avatar.data"
     );
 
-    console.log(accessToken)
-    console.log(refreshToken)
     return res
         .status(200)
         .cookie("accessToken", accessToken, options)
@@ -167,11 +166,7 @@ const loginUser = asyncHandler(async (req, res) => {
         .json(
             new ApiResponse(
                 200,
-                {
-                    user: loggedInUser,
-                    accessToken,
-                    refreshToken, // sending tokens again for mobile apps as they don't accept cookies
-                },
+                { user: loggedInUser },
                 "User logged in successfully"
             )
         );
@@ -232,7 +227,7 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
             .json(
                 new ApiResponse(
                     200,
-                    { accessToken, refreshToken: newRefreshToken }, // for mobile apps
+                    {},
                     "New Refresh Token generated successfully"
                 )
             );
@@ -272,8 +267,9 @@ const getCurrentUser = asyncHandler(async (req, res) => {
 
 // get another user
 const getUser = asyncHandler(async (req, res) => {
-    const user = await User.findOne({ username: req.params.username }).select(
-        "-password -refreshToken"
+    const username = req.params.username;
+    const user = await User.findOne({ username }).select(
+        "-password -refreshToken -avatar.data"
     );
 
     if (!user) {
@@ -299,7 +295,7 @@ const updateUserDetails = asyncHandler(async (req, res) => {
             $set: { fullname, username }, // only these fields are allowed to be updated
         },
         { new: true }
-    ).select("-password -refreshToken");
+    ).select("-password -refreshToken -avatar.data");
 
     return res
         .status(200)

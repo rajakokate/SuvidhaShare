@@ -2,21 +2,24 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
+import dotenv from "dotenv";
+dotenv.config();
+
 const app = express();
 
-// app.get('/', (req, res) => {
-//     res.send('Hello World!')
-// })
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+})
 
 app.use(
     cors({
-        // origin: process.env.CORS_ORIGIN,
+        origin: process.env.CORS_ORIGIN,
         credentials: true,
     })
 );
 
 app.use(express.json());
-app.use(express.urlencoded({extended: true }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static("./public"));
 app.use(cookieParser());
 

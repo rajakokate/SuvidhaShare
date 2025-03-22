@@ -18,7 +18,7 @@ const router = Router();
 
 router.route("/signup").post(signupUser);
 router.route("/login").post(loginUser);
-// router.route("/:username").get(getUser);
+router.route("/u/:username").get(getUser);
 
 // secured routes
 router.route("/logout").post(verifyJWT, logoutUser);
