@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../assets/suvidhasharelogo.png";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -9,20 +10,20 @@ const Navbar = () => {
         <span className="text-gray-700 font-semibold text-lg"></span>
       </div>
       <div className="flex gap-4">
-      <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1">
-          HOME
+      <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1"><Link to="/">
+          HOME</Link>
         </button>
-        <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1">
-          ABOUT US
+        <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1"><Link to="/aboutus">
+          ABOUT US</Link>
         </button>
-        <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1">
+        <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1"> 
           PROGRAMS
         </button> 
         <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1">
           CONTACT US
         </button>
         <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1">
-          SIGNUP
+        <Link to="/signup">SIGNUP</Link>
         </button>
       </div>
     </nav>
