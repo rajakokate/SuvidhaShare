@@ -8,7 +8,7 @@ import "./axiosConfig.js";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/navbar";
 import HeroSection from "./components/HeroSection";
-import Solutions from "./components/Solutions";
+import Solutions from "./components/Solutions"
 import Nutrition from "./components/nutrition";
 import WhyUseSuvidhaShare from "./components/whyUseSuvidhaShare";
 import Gallery from "./components/gallery";
@@ -17,6 +17,7 @@ import ContactUs from "./components/contactUs";
 import AboutUs from "./pages/AboutUs";
 import SignIn from "./components/signin";
 import SignUp from "./components/SignUp";
+import AddFood from "./components/AddFoodList";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
             <>
               <Navbar />
               <HeroSection />
+              <AddFood/>
               <Solutions />
               <Nutrition />
               <WhyUseSuvidhaShare />
