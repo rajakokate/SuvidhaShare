@@ -8,11 +8,11 @@ import { GiShop } from "react-icons/gi";
 
 const WhyUseSuvidhaShare = () => {
   return (
-    <div className="flex flex-col items-left justify-center min-h-screen bg-cover bg-center"
+    <div className="flex flex-col lg:items-left justify-center md:min-h-screen sm:min-h-full bg-cover bg-center"
       style={{
         backgroundImage: `url("${Background}")`,
       }}>
-    <div className="bg-[#f9f3f0] rounded-2xl shadow-md p-8 w-96 text-center h-120 max-w-md">
+    <div className="bg-[#f9f3f0] rounded-2xl shadow-md p-8 m-8 w-96 text-center h-120 max-w-md">
         <h2 className="text-3xl font-extrabold text-red-500 mb-2 font-fredoka">Why Use</h2>
         <h1 className="text-4xl font-extrabold text-green-700 mb-6 font-fredoka">Suvidha Share </h1>
         <div className="border-t-2 border-orange-400 w-full mx-auto mb-8"></div>
