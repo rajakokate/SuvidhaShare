@@ -35,11 +35,11 @@ const App = () => {
           path="/"
           element={
             <>
-              {/* <Navbar />
+              <Navbar />
               <HeroSection />
               <AddFood/>
               <Solutions />
-              <Nutrition /> */}
+              <Nutrition />
               <WhyUseSuvidhaShare />
               <Gallery />
               <ClientTestimonials />
