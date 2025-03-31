@@ -32,8 +32,9 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/allfoodlists" element={<AllFoodLists />} />
+        <Route path="/aboutus" element={<AboutUs />}/>
+        <Route path="/contactus" element={<ContactUs/>}/>
         {/* Default Route (Home page) */}
         <Route
           path="/"
