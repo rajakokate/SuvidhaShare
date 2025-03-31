@@ -42,7 +42,6 @@ const App = () => {
             <>
               <Navbar />
               <HeroSection />
-              <AddFood />
               <Solutions />
               <Nutrition />
               <WhyUseSuvidhaShare />
