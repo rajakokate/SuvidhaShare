@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/suvidhasharelogo.png";
+import Logo from "../assets/Suvidha_logo_transparent.png";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -13,7 +13,7 @@ const Navbar = () => {
         <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1 cursor-pointer">
           <Link to="/">HOME</Link>
         </button>
-        <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1 cursor-pointer">
+        <button className="bg-green-900 text-white px-8 py-2 rounded-full font-bold flex items-center gap-1 ">
           <Link to="/aboutus">ABOUT US</Link>
         </button>
         <a
