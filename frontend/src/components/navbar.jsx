@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center p-2 bg-white shadow-md">
+    <nav className="flex justify-between items-center bg-white shadow-md">
       <div className="flex items-center gap-2">
         <img src={Logo} alt="User Profile" className=" w-48 h-25 bg-white" />
         <span className="text-gray-700 font-semibold text-lg"></span>
