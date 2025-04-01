@@ -47,7 +47,7 @@ const ContactUs = () => {
         <div>
   <h3 className="text-[#2d6a4f] text-xl font-bold">Useful</h3>
   <div className="text-[#837a68] mt-2">
-    <a href="#" className="mb-2 block">Certificates</a> {/* Added block to ensure each link is block-level */}
+    <a href="#" className="mb-2 block">Certificates</a> 
     <a href="#" className="mb-2 block">Platforms</a>
     <a href="#" className="mb-2 block">FAQ</a>
     <a href="#" className="mb-2 block">Legal and Privacy</a>
