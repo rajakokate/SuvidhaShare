@@ -34,6 +34,7 @@ const App = () => {
         <Route path="/signin" element={<SignIn />} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/allfoodlists" element={<AllFoodLists />} />
+        <Route path="/addfood" element={<AddFood />} />
         {/* Default Route (Home page) */}
         <Route
           path="/"
