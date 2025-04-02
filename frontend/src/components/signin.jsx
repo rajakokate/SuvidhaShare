@@ -16,16 +16,28 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Call login API
     try {
       const response = await axios.post("/user/login", {
         email: email,
         password: password,
       });
 
+
       if (response.status === 200) {
-        localStorage.setItem("user", response.data.user);
-        navigate("/dashboard");
-      } else {
+        const role  = response.data.data.user.role; 
+        localStorage.setItem("user", response.data);
+        console.log(role)
+
+        //Redirect user based on role
+        if(role ==='individual') navigate('/dashboard/individual');
+        else if (role === "volunteer") navigate('/dashboard/volunteer')
+        else if (role === "restaurant")navigate('dashboard/restaurant')
+        else {
+          navigate('/dashboard')}
+      } 
+      else {
         console.error("Login failed:", response.data.message);
         alert(response.data.message);
       }
