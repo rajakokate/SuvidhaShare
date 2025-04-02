@@ -5,18 +5,18 @@ import { Food } from "../models/food.model.js";
 
 // Add Food donation!!
 const addFood = asyncHandler(async (req, res) => {
-    const { title, description, expiryTime, quantity, address } = req.body;
+    const { title, description, pickupTime, quantity, location } = req.body;
 
-    if (!title || !description || !expiryTime || !quantity || !address) {
+    if (!title || !description || !pickupTime || !quantity || !location) {
         throw new ApiError(400, "All fields are required");
     }
 
     const newFood = await Food.create({
         title,
         description,
-        expiryTime,
+        pickupTime, 
         quantity,
-        address,
+        location,
         user: req.user._id
     });
 

@@ -12,16 +12,17 @@ const foodSchema = new mongoose.Schema(
             required: true,
             trim: true
         },
-        expiryTime: {
-            type: Date,
-            required: true
+        pickupTime: {
+            type: String, // Keeping it as a string
+            required: true,
+            trim: true
         },
         quantity: {
             type: Number,
             required: true,
             min: 1
         },
-        address: {
+        location: {
             type: String,
             required: true,
             trim: true
