@@ -23,7 +23,7 @@ const AddFood = () => {
   
      try {
           
-          const response = await axios.post("/food/add", addFood);
+          const response = await axios.post("http://localhost:5000/api/v1/food/add", addFood);
           
           setSuccess(response.data.message);
           setFormData({ title: "",
