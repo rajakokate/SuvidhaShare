@@ -32,9 +32,9 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
-        <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/allfoodlists" element={<AllFoodLists />} />
-        <Route path="/addfood" element={<AddFood />} />
+        <Route path="/aboutus" element={<AboutUs />}/>
+        <Route path="/contactus" element={<ContactUs/>}/>
         {/* Default Route (Home page) */}
         <Route
           path="/"
@@ -42,7 +42,6 @@ const App = () => {
             <>
               <Navbar />
               <HeroSection />
-              <AddFood />
               <Solutions />
               <Nutrition />
               <WhyUseSuvidhaShare />
