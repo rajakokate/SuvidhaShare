@@ -30,12 +30,9 @@ const SignIn = () => {
         localStorage.setItem("user", response.data);
         console.log(role)
 
-        //Redirect user based on role
-        if(role ==='individual') navigate('/dashboard/individual');
-        else if (role === "volunteer") navigate('/dashboard/volunteer')
-        else if (role === "organisation")navigate('/dashboard/restaurant')
-        else {
-          navigate('/dashboard')}
+        //Redirect user to dashboard
+        
+          navigate('/dashboard')
       } 
       else {
         console.error("Login failed:", response.data.message);

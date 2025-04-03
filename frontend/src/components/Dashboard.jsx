@@ -1,14 +1,15 @@
+import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Search, User, LogOut, Settings, Truck, ClipboardList, Gift } from 'lucide-react';
 
-const data = [
-  { name: '04 Mar 2025', order: 10, deliver: 20, pending: 5 },
-  { name: '05 Mar 2025', order: 30, deliver: 25, pending: 10 },
-  { name: '06 Mar 2025', order: 50, deliver: 40, pending: 15 },
-  { name: '07 Mar 2025', order: 70, deliver: 60, pending: 20 },
-];
+// const data = [
+//   { name: '04 Mar 2025', order: 10, deliver: 20, pending: 5 },
+//   { name: '05 Mar 2025', order: 30, deliver: 25, pending: 10 },
+//   { name: '06 Mar 2025', order: 50, deliver: 40, pending: 15 },
+//   { name: '07 Mar 2025', order: 70, deliver: 60, pending: 20 },
+// ];
 
-export default function Dashboard() {
+function Dashboard() {
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* Sidebar */}
@@ -57,7 +58,7 @@ export default function Dashboard() {
           ))}
         </div>
 
-        {/* Chart */}
+        {/* Chart
         <div className="bg-white p-6 mt-6 rounded-lg shadow">
           <h3 className="text-lg font-bold mb-4">Record</h3>
           <ResponsiveContainer width="100%" height={300}>
@@ -72,7 +73,7 @@ export default function Dashboard() {
               <Line type="monotone" dataKey="pending" stroke="#ff7300" />
             </LineChart>
           </ResponsiveContainer>
-        </div>
+        </div> */}
       </div>
 
       {/* Right Panel */}
@@ -89,3 +90,5 @@ export default function Dashboard() {
     </div>
   );
 }
+
+export default Dashboard;
