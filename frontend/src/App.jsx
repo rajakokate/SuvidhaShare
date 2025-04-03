@@ -6,6 +6,9 @@ import "./axiosConfig.js";
 
 // Import your components
 import Dashboard from "./components/Dashboard";
+import IndividualDashboard from "./components/IndividualDashboard.jsx";
+import VolunteerDashboard from "./components/VolunteerDashboard.jsx";
+import RestaurantDashboard from "./components/RestaurantDashboard.jsx";
 import Navbar from "./components/navbar";
 import HeroSection from "./components/HeroSection";
 import Solutions from "./components/Solutions";
@@ -30,6 +33,9 @@ const App = () => {
         {" "}
         {/* Only one Route will be rendered at a time */}
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard/individual" element={<IndividualDashboard />} />
+        <Route path="/dashboard/volunteer" element={<VolunteerDashboard />} />
+        <Route path="/dashboard/restaurant" element={<RestaurantDashboard/>} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/allfoodlists" element={<AllFoodLists />} />

@@ -174,7 +174,7 @@ const SignUp = () => {
           >
             <option value="individual">Individual</option>
             <option value="volunteer">Volunteer</option>
-            <option value="organisation">Organisation</option>
+            <option value="organisation">Restaurant</option>
           </select>
 
           <button

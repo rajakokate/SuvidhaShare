@@ -33,7 +33,7 @@ const SignIn = () => {
         //Redirect user based on role
         if(role ==='individual') navigate('/dashboard/individual');
         else if (role === "volunteer") navigate('/dashboard/volunteer')
-        else if (role === "restaurant")navigate('dashboard/restaurant')
+        else if (role === "organisation")navigate('/dashboard/restaurant')
         else {
           navigate('/dashboard')}
       } 
@@ -119,7 +119,7 @@ const SignIn = () => {
 
             <p className="text-center text-sm text-gray-600">
               Don't have an account?{" "}
-              <a href="/SignUp" className="text-indigo-600 hover:underline">
+              <a href="/SignUp" className="text-indigo-600 hover:underline cursor-pointer">
                 Sign Up
               </a>
             </p>
