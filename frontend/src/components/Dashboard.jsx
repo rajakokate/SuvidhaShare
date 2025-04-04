@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Search, User, LogOut, Settings, Truck, ClipboardList, Gift } from 'lucide-react';
+import Sidebar from './sidebar';
 
 // const data = [
 //   { name: '04 Mar 2025', order: 10, deliver: 20, pending: 5 },
@@ -10,25 +11,12 @@ import { Search, User, LogOut, Settings, Truck, ClipboardList, Gift } from 'luci
 // ];
 
 function Dashboard() {
+  
   return (
     <div className="flex min-h-screen bg-gray-100">
+      
       {/* Sidebar */}
-      <div className="w-1/5 bg-green-900 text-white p-4">
-        <h1 className="text-xl font-bold mb-6 flex items-center gap-2">
-          <Gift size={24} /> SUVIDHA SHARE
-        </h1>
-        <ul className="space-y-4">
-          <li className="cursor-pointer">Dashboard</li>
-          <li className="cursor-pointer">User Profile</li>
-          <li className="cursor-pointer">Food Track</li>
-          <li className="cursor-pointer">Restaurant</li>
-          <li className="cursor-pointer">Pick up</li>
-          <li className="cursor-pointer">Comments</li>
-          <li className="cursor-pointer">Help & Center</li>
-          <li className="cursor-pointer flex items-center gap-2 mt-4"><Settings size={16} /> Settings</li>
-          <li className="cursor-pointer flex items-center gap-2 mt-2"><LogOut size={16} /> Logout</li>
-        </ul>
-      </div>
+      <Sidebar/>
 
       {/* Main Content */}
       <div className="flex-1 p-6">
@@ -46,7 +34,7 @@ function Dashboard() {
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-6 mt-6">
-          {[{ title: 'Total Donations', icon: Gift }, { title: 'Total Deliver', icon: Truck }, { title: 'Total Pending', icon: ClipboardList }].map((item, index) => (
+          {/* {[{ title: 'Total Donations', icon: Gift }, { title: 'Total Deliver', icon: Truck }, { title: 'Total Pending', icon: ClipboardList }].map((item, index) => (
             <div key={index} className="bg-green-700 text-white p-6 rounded-lg flex items-center gap-4">
               <item.icon size={24} />
               <div>
@@ -55,7 +43,7 @@ function Dashboard() {
                 <p>Today: 36 Yesterday: 43</p>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
 
         {/* Chart
