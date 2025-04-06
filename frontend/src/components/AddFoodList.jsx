@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {useEffect} from "react";
 
 const AddFood = () => {
   const [addFood, setAddfood] = useState({
     title: "",
     description: "",
     quantity: "", 
-    expiryTime: "",
+    pickupTime: "",
     timePeriod: "AM",
-    address: "",
+    location: "",
     });
 
     const [success, setSuccess] = useState("");
@@ -20,23 +21,41 @@ const AddFood = () => {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-  
+      const token = localStorage.getItem('user');
      try {
-          
-          const response = await axios.post("http://localhost:5000/api/v1/food/add", addFood);
-          
-          setSuccess(response.data.message);
-          setFormData({ title: "",
+          const response = await axios.post('http://localhost:5000/api/v1/food/add', addFood, 
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+                "Content-Type": "application/json",
+              },
+            }
+          );
+          console.log(response);
+          setSuccess("Food added successfully!");
+          setError("");
+          setAddfood({ title: "",
             description: "",
             quantity: "", 
-            expiryTime: "",
-            timePeriod: "AM",
-            address: "", });
+            pickupTime: "",
+            locstion: "", });
         } catch (err) {
+          console.error(err);
           setError(err.response?.data?.error || "Something went wrong!");
           setSuccess("");
         }
       };
+
+      useEffect(() => {
+        if (success || error) {
+          const timer = setTimeout(() => {
+            setSuccess("");
+            setError("");
+          }, 3000);
+          return () => clearTimeout(timer);
+        }
+      }, [success, error]);
+  
 
   return (
     <>
@@ -96,9 +115,9 @@ const AddFood = () => {
               <div className="flex">
                 <input 
                   type="time" 
-                   name="expiryTime"
+                   name="pickupTime"
                   className="w-full p-3 rounded-l-xl bg-gray-200 border-none focus:ring-2 focus:ring-green-500 text-lg" 
-                  value={addFood.expiryTime}
+                  value={addFood.pickupTime}
                   onChange={handleChange}
                   required
                 />
@@ -120,10 +139,10 @@ const AddFood = () => {
               <label className="block text-black font-semibold mb-1 text-lg">Location</label>
               <input
                 type="text"
-                name="address"
+                name="location"
                 placeholder="Enter pickup location"
                 className="w-full p-3 rounded-xl bg-gray-200 border-none focus:ring-2 focus:ring-green-500 text-lg"
-                value={addFood.address}
+                value={addFood.location}
                 onChange={handleChange}
                 required              
               />

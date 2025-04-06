@@ -12,7 +12,7 @@ export default function AllFoodLists() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('/food/add');
+                const response = await axios.get('http://localhost:5000/api/v1/food/add',);
                 setFoodData(response.data);
                 setLoading(false);
             } catch (err) {
@@ -33,8 +33,7 @@ export default function AllFoodLists() {
                 <h3 className="text-2xl">{item.title}</h3>
                 <p className="text-lg">{item.description}</p>
                 <p className="text-lg">{item.quantity}</p>
-                <p className="text-lg">{item.expiryTime}</p>
-                <p className="text-lg">{item.address}</p>
+                <p className="text-lg">{item.location}</p>
                 <p>{item.timestamps ? 'Available' : 'Not Available'}</p>
             </div>
         </div>
