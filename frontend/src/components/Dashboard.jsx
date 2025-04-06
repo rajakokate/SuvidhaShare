@@ -2,15 +2,12 @@ import { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Search, User, LogOut, Settings, Truck, ClipboardList, Gift } from 'lucide-react';
 import Sidebar from './sidebar';
-
-// const data = [
-//   { name: '04 Mar 2025', order: 10, deliver: 20, pending: 5 },
-//   { name: '05 Mar 2025', order: 30, deliver: 25, pending: 10 },
-//   { name: '06 Mar 2025', order: 50, deliver: 40, pending: 15 },
-//   { name: '07 Mar 2025', order: 70, deliver: 60, pending: 20 },
-// ];
+import { useAuth } from '../context/AuthContext';
+import AddFood from './AddFoodList';
 
 function Dashboard() {
+
+  const [isOpen, setIsOpen] = useState(false)
   
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -34,7 +31,7 @@ function Dashboard() {
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-6 mt-6">
-          {/* {[{ title: 'Total Donations', icon: Gift }, { title: 'Total Deliver', icon: Truck }, { title: 'Total Pending', icon: ClipboardList }].map((item, index) => (
+          {[{ title: 'Total Donations', icon: Gift }, { title: 'Total Deliver', icon: Truck }, { title: 'Total Pending', icon: ClipboardList }].map((item, index) => (
             <div key={index} className="bg-green-700 text-white p-6 rounded-lg flex items-center gap-4">
               <item.icon size={24} />
               <div>
@@ -43,25 +40,17 @@ function Dashboard() {
                 <p>Today: 36 Yesterday: 43</p>
               </div>
             </div>
-          ))} */}
+          ))}
         </div>
 
-        {/* Chart
-        <div className="bg-white p-6 mt-6 rounded-lg shadow">
-          <h3 className="text-lg font-bold mb-4">Record</h3>
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Line type="monotone" dataKey="order" stroke="#8884d8" />
-              <Line type="monotone" dataKey="deliver" stroke="#82ca9d" />
-              <Line type="monotone" dataKey="pending" stroke="#ff7300" />
-            </LineChart>
-          </ResponsiveContainer>
-        </div> */}
+        {/* Food Dashboard */}
+        <div>
+          <button onClick={() => setIsOpen(true)} className='cursor-pointer'>Add Food</button>
+
+          
+        </div>
+
+        {isOpen && <AddFood/>}
       </div>
 
       {/* Right Panel */}

@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Importing necessary components from react-router-dom
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; 
+import { AuthProvider } from "./context/AuthContext.jsx";
 
 // axios configuration
 import "./axiosConfig.js";
@@ -22,38 +23,48 @@ import AllFoodLists from "./pages/AllFoodLists.jsx";
 
 const App = () => {
   return (
-    <Router>
-      {" "}
-      {/* Wrapping the app with Router to enable routing */}
-      {/* Navbar will be available on all pages */}
-      <Routes>
+    <AuthProvider>
+      <Router>
         {" "}
-        {/* Only one Route will be rendered at a time */}
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/allfoodlists" element={<AllFoodLists />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/contactus" element={<ContactUs />} />
-        <Route path="/addfood" element={<AddFood />} />
-        {/* Default Route (Home page) */}
-        <Route
-          path="/"
-          element={
-            <>
-              <Navbar />
-              <HeroSection />
-              <Solutions />
-              <Nutrition />
-              <WhyUseSuvidhaShare />
-              <Gallery />
-              <ClientTestimonials />
-              <ContactUs />
-            </>
-          }
-        />
-      </Routes>
-    </Router>
+        {/* Wrapping the app with Router to enable routing */}
+        {/* Navbar will be available on all pages */}
+        <Routes>
+          {" "}
+          {/* Only one Route will be rendered at a time */}
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard/individual"
+            element={<IndividualDashboard />}
+          />
+          <Route path="/dashboard/volunteer" element={<VolunteerDashboard />} />
+          <Route
+            path="/dashboard/restaurant"
+            element={<RestaurantDashboard />}
+          />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/allfoodlists" element={<AllFoodLists />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          {/* Default Route (Home page) */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Navbar />
+                <HeroSection />
+                <Solutions />
+                <Nutrition />
+                <WhyUseSuvidhaShare />
+                <Gallery />
+                <ClientTestimonials />
+                <ContactUs />
+              </>
+            }
+          />
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 };
 
