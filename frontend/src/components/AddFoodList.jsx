@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import {useEffect} from "react";
+import { useNavigate } from 'react-router-dom';
 
 const AddFood = () => {
   const [addFood, setAddfood] = useState({
@@ -14,6 +15,7 @@ const AddFood = () => {
 
     const [success, setSuccess] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
       setAddfood({ ...addFood, [e.target.name]: e.target.value });
@@ -38,7 +40,12 @@ const AddFood = () => {
             description: "",
             quantity: "", 
             pickupTime: "",
-            locstion: "", });
+            location: "", });
+
+          setTimeout(() => {
+              navigate('/dashboard');
+            }, 1500);
+
         } catch (err) {
           console.error(err);
           setError(err.response?.data?.error || "Something went wrong!");
@@ -64,8 +71,8 @@ const AddFood = () => {
       <div className="min-h-screen flex items-center justify-center bg-blue-50 p-6">
         <div className="bg-green-800 p-10 rounded-2xl shadow-xl w-full max-w-3xl">
           <h2 className="text-4xl font-bold text-center text-black mb-8">ADD FOOD</h2>
-          {success && <div className="text-green-500 mb-4">{success}</div>}
-          {error && <div className="text-red-500 mb-4">{error}</div>}
+          {success && <div className="text-green-500 text-4xl font-bold mb-4">{success}</div>}
+          {error && <div className="text-red-500 text-4xl font-bold mb-4">{error}</div>}
           <div className="space-y-4">
             {/* Food Name */}
             <div>
