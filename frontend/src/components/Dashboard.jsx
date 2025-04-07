@@ -45,7 +45,7 @@ function Dashboard() {
 
         {/* Food Dashboard */}
         <div>
-          <button onClick={() => setIsOpen(true)} className='cursor-pointer'>Add Food</button>
+          <button onClick={() => setIsOpen(true)} className='cursor-pointer'>Add Food Donation</button>
 
           
         </div>
