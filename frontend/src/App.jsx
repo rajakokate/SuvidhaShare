@@ -32,20 +32,12 @@ const App = () => {
           {" "}
           {/* Only one Route will be rendered at a time */}
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route
-            path="/dashboard/individual"
-            element={<IndividualDashboard />}
-          />
-          <Route path="/dashboard/volunteer" element={<VolunteerDashboard />} />
-          <Route
-            path="/dashboard/restaurant"
-            element={<RestaurantDashboard />}
-          />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/allfoodlists" element={<AllFoodLists />} />
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/addfood" element={<AddFood/>}></Route>
           {/* Default Route (Home page) */}
           <Route
             path="/"
