@@ -16,16 +16,25 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Call login API
     try {
       const response = await axios.post("/user/login", {
         email: email,
         password: password,
       });
 
+
       if (response.status === 200) {
-        localStorage.setItem("user", response.data.user);
-        navigate("/dashboard");
-      } else {
+        const role  = response.data.data.user.role; 
+        localStorage.setItem("user", response.data);
+        console.log(role)
+
+        //Redirect user to dashboard
+        
+          navigate('/dashboard')
+      } 
+      else {
         console.error("Login failed:", response.data.message);
         alert(response.data.message);
       }
@@ -107,7 +116,7 @@ const SignIn = () => {
 
             <p className="text-center text-sm text-gray-600">
               Don't have an account?{" "}
-              <a href="/SignUp" className="text-indigo-600 hover:underline">
+              <a href="/SignUp" className="text-indigo-600 hover:underline cursor-pointer">
                 Sign Up
               </a>
             </p>

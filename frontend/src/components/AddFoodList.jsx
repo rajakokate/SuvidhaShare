@@ -158,9 +158,7 @@ const AddFood = () => {
 
           {/* Submit Button */}
           <div className="mt-8 flex justify-center">
-            <button 
-            type="submit"
-             className="bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-600 transition duration-300">
+            <button className="bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-600 transition duration-300 cursor-pointer">
               ADD FOOD
             </button>
           </div>
