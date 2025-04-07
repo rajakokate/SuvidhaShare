@@ -1,5 +1,8 @@
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { Search, FileQuestion, User, LogOut, Settings, Truck, ClipboardList, Gift, ScrollText, LayoutDashboard, Store, MapPinHouse, MessageCircleMore } from 'lucide-react';
 import Logo from '../assets/suvidhasharelogo.png';
+import axios from "axios";
 
 export default function AllFoodLists() {
     const [foodData, setFoodData] = useState([]);
@@ -9,7 +12,7 @@ export default function AllFoodLists() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('/user/allfoodlists');
+                const response = await axios.get('http://localhost:5000/api/v1/food/add',);
                 setFoodData(response.data);
                 setLoading(false);
             } catch (err) {
@@ -21,22 +24,17 @@ export default function AllFoodLists() {
         fetchData();
     }, []); 
 
-    if (loading) {
-        return <div>Loading...</div>; 
-    }
-
-    if (error) {
-        return <div>Error: {error.message}</div>; 
-    }
-
+    
     const foodItems = foodData.map((item, index) => (
         <div className="bg-green-900 text-white p-6 rounded-lg flex items-center gap-4"
             key={index} >
             <Truck />
             <div>
-                <h3 className="text-2xl">{item.name}</h3>
-                <p className="text-lg">{item.restaurant}</p>
-                <p>{item.available ? 'Available' : 'Not Available'}</p>
+                <h3 className="text-2xl">{item.title}</h3>
+                <p className="text-lg">{item.description}</p>
+                <p className="text-lg">{item.quantity}</p>
+                <p className="text-lg">{item.location}</p>
+                <p>{item.timestamps ? 'Available' : 'Not Available'}</p>
             </div>
         </div>
     ));
