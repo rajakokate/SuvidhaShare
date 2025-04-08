@@ -4,10 +4,10 @@ import { addFood, getUserFoods } from "../controllers/food.controller.js";
 
 const router = Router();
 
-// Route to add a food donation
+// POST /api/v1/food/add - Add a new food donation
 router.route("/add").post(verifyJWT, addFood);
 
-// Route to get all foods by the logged-in user
+// GET /api/v1/food/my-foods?page=1&limit=10 - Get paginated foods added by user
 router.route("/my-foods").get(verifyJWT, getUserFoods);
 
 export default router;
