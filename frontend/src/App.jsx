@@ -16,10 +16,10 @@ import Gallery from "./components/gallery";
 import ClientTestimonials from "./components/clientTestmonials";
 import ContactUs from "./components/contactUs";
 import AboutUs from "./pages/AboutUs";
-import SignIn from "./components/Signin.jsx";
+import SignIn from "./components/Signin";
 import SignUp from "./components/SignUp";
 import AddFood from "./components/AddFoodList";
-import AllFoodLists from "./pages/AllFoodLists.jsx";
+import AllFoodLists from "./pages/AllFoodLists";
 
 const App = () => {
   return (
