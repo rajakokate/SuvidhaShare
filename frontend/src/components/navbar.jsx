@@ -24,7 +24,7 @@ const Navbar = () => {
 
         {/* Navbar Links (Desktop) */}
         <div className="hidden lg:flex gap-4">
-          <NavButton to="/">HOME</NavButton>
+          <NavButton to="/">HOME Button</NavButton>
           <NavButton to="/aboutus">ABOUT US</NavButton>
           <a
             href="https://suvidhafoundationedutech.org/SuvidhaEvents.php"
