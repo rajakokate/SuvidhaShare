@@ -16,7 +16,7 @@ import Gallery from "./components/gallery";
 import ClientTestimonials from "./components/clientTestmonials";
 import ContactUs from "./components/contactUs";
 import AboutUs from "./pages/AboutUs";
-import SignIn from "./components/SignIn";
+import SignIn from "./components/signin";
 import SignUp from "./components/SignUp";
 import AddFood from "./components/AddFoodList";
 import AllFoodLists from "./pages/AllFoodLists";
