@@ -46,10 +46,10 @@ export default function AllFoodLists() {
                  key={index}>
                 <Truck/>
                 <div>
-                    <h3 className="text-2xl">{item.title}</h3>
-                    <p className="text-lg">{item.description}</p>
-                    <p className="text-lg">{item.quantity}</p>
-                    <p className="text-lg">{item.location}</p>
+                    <h3 className="text-xl">{item.title}</h3>
+                    <p className="text-xs">{item.description}</p>
+                    <span className="text-sm">Quantity: {item.quantity}</span>
+                    <p className="text-sm">Location: {item.location}</p>
                 </div>
             </div>
         ));
