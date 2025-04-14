@@ -29,7 +29,7 @@ const WhyUseSuvidhaShare = () => {
                 <MdFastfood />
               </span>
               <p className="text-green-700 text-base font-medium">
-                Enjoy Good Food At 1/2 Price or Less
+                Receive Nutritious Meals at No Cost
               </p>
             </div>
 
@@ -58,7 +58,7 @@ const WhyUseSuvidhaShare = () => {
                 <GiShop />
               </span>
               <p className="text-green-700 text-base font-medium">
-                Try Something New From Local Cafes, Bakeries Or Restaurants
+                Experience Care from Local Cafes, Bakeries, and Restaurants
               </p>
             </div>
           </div>
