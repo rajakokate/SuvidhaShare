@@ -20,17 +20,6 @@ function Dashboard() {
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Dashboard</h2>
           <div className="flex items-center gap-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search"
-                className="pl-8 pr-4 py-1 border rounded-md"
-              />
-              <Search
-                className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                size={16}
-              />
-            </div>
             <User size={24} />
             <span>Sanju@gmail.com</span>
           </div>
