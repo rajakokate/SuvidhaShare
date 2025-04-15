@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Search, User, LogOut, Settings, Truck, ClipboardList, Gift } from 'lucide-react';
 import Sidebar from './sidebar';
 import { useAuth } from '../context/AuthContext';
 import AddFood from './AddFoodList';
 import AllFoodLists from '../pages/AllFoodLists';
 import { Link } from 'react-router-dom'
+import Logo from '../assets/suvidhasharelogo.png';
 
 function Dashboard() {
 
   
   return (
     <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar */}
+      
       <Sidebar />
 
       {/* Main Content */}
@@ -20,17 +20,6 @@ function Dashboard() {
         <div className="flex justify-between items-center">
           <h2 className="text-2xl font-bold">Dashboard</h2>
           <div className="flex items-center gap-4">
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Search"
-                className="pl-8 pr-4 py-1 border rounded-md"
-              />
-              <Search
-                className="absolute left-2 top-1/2 transform -translate-y-1/2"
-                size={16}
-              />
-            </div>
             <User size={24} />
             <span>Sanju@gmail.com</span>
           </div>
@@ -60,7 +49,7 @@ function Dashboard() {
         {/*Add food button */}
         <div>
           <Link to="/addfood">
-            <button className="bg-yellow-500 text-black font-bold py-3 px-8 rounded-full text-lg hover:bg-yellow-600 transition duration-300 cursor-pointer">
+            <button className="bg-yellow-500 text-black font-bold my-5 py-5 px-8 rounded-full text-lg hover:bg-yellow-400 text-white transition duration-300 cursor-pointer">
               Add Food Donations
             </button>
           </Link>
