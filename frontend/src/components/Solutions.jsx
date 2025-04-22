@@ -1,5 +1,8 @@
 import React from "react";
-
+import surpriseBagIcon from '../assets/icons/surprisebag.png'
+import communityIcon from '../assets/icons/community.png'
+import collabSocialIcon from '../assets/icons/collabsocial.png'
+import smartFoodIcon from '../assets/icons/smartfood.png'
 const Solutions = () => {
   return (
     <section className="bg-[#E6F4EA] py-20 px-6">
@@ -19,7 +22,7 @@ const Solutions = () => {
         <div className="bg-green-900 text-white rounded-2xl p-6 md:p-8 text-center">
           <h3 className="text-2xl font-bold">SURPRISE BAGS</h3>
           <img
-            src="src/assets/icons/first.png"
+            src={surpriseBagIcon}
             alt="Surprise Bags"
             className="mx-auto w-16 md:w-20 h-16 md:h-20 mb-4"
           />
@@ -32,7 +35,7 @@ const Solutions = () => {
         <div className="bg-green-900 text-white rounded-2xl p-6 md:p-8 text-center">
           <h3 className="text-2xl font-bold">COMMUNITY AWARENESS</h3>
           <img
-            src="src/assets/icons/second.png"
+            src={communityIcon}
             alt="Community Awareness"
             className="mx-auto w-16 md:w-20 h-16 md:h-20 mb-4"
           />
@@ -46,7 +49,7 @@ const Solutions = () => {
         <div className="bg-green-900 text-white rounded-2xl p-6 md:p-8 text-center">
           <h3 className="text-2xl font-bold">COLLABORATIONS & SOCIAL IMPACT</h3>
           <img
-            src="src/assets/icons/third.png"
+            src={collabSocialIcon}
             alt="Collaborations"
             className="mx-auto w-16 md:w-20 h-16 md:h-20 mb-4"
           />
@@ -60,7 +63,7 @@ const Solutions = () => {
         <div className="bg-green-900 text-white rounded-2xl p-6 md:p-8 text-center">
           <h3 className="text-2xl font-bold">SMART FOOD LOGISTICS</h3>
           <img
-            src="src/assets/icons/forth.png"
+            src={smartFoodIcon}
             alt="Smart Food Logistics"
             className="mx-auto w-16 md:w-20 h-16 md:h-20 mb-4"
           />
